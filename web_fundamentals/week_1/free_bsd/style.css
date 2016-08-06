@@ -1,0 +1,153 @@
+#wrapper {
+    width: 840px;
+    margin: 0 auto;
+    font-size: .75em;
+}
+
+#banner {
+    background: linear-gradient(#660200, #840400);
+}
+
+#logo,
+#options-search,
+#options li,
+#top-nav li {
+    display: inline-block;
+}
+
+#options-search {
+    margin-left: 50px;
+    vertical-align: top;
+    padding-top: 5px;
+}
+
+#options-search span {
+    vertical-align: top;
+    color: white;
+}
+
+#options {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+#options ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: white;
+}
+
+#options li {
+    padding-right: 4px;
+    padding-left: 6px;
+}
+
+#options li + li {
+    border-left: 1px solid #ffffff;
+}
+
+#options li>a {
+    color: #EEBC1D;
+}
+#search {
+    padding-left: 6px;
+}
+
+#search input[type=text] {
+    width: 132px;
+}
+
+#search input[type=button] {
+    background-color: rgba(0,0,0,0);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+#side-nav ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+#side-nav li {
+	padding-bottom: 8px;
+    text-indent: -1em;
+    padding-left: 1em;
+}
+
+#side-nav li:last-child {
+    padding-bottom: 0;
+}
+
+#side-nav ul li:before{
+    font-size: 1.1em;
+    color: #950500;
+    content: "\00BB \0020";
+}
+
+#top-nav {
+    margin-bottom: 25px;
+}
+
+#top-nav li>a {
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+}
+
+#top-nav li + li {
+    border-left: 1px solid #666;
+}
+
+#top-nav li {
+    padding-right: 8px;
+    padding-left: 12px;
+}
+
+#side-nav,
+#content {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#side-nav {
+    background-color: #eee;
+    border: 1px solid #d4d4d4;
+    padding: 0 5px 5px 5px;
+    margin-right: 15px;
+    margin-left: 25px;
+    width: 140px;
+}
+
+#top-nav ul {
+    list-style: none;
+    padding: 10px 15px;
+    background: linear-gradient(#f2f2f2, #e5e5e5);
+    border: 1px solid #d4d4d4;
+    margin-top: 0;
+}
+
+#content {
+    width: 575px;
+}
+
+#content h3:first-child{
+    margin-top: 0;
+}
+
+#side-nav a,
+#content h2,
+#content h3,
+#content h4,
+#content a {
+    color: #950500;
+}
+
+hr {
+    border: 1px solid #666;
+}
+
+.collapse-bm {
+    margin-bottom: 0;
+}
