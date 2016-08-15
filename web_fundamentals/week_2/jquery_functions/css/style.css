@@ -1,0 +1,78 @@
+.function-corral {
+    margin: 0 auto;
+}
+
+.function-block {
+    margin: 10px;
+    height: 150px;
+}
+
+.function-block--large {
+    margin: 10px;
+    height: 500px;
+}
+
+.function-block__insides {
+    padding: 10px;
+}
+
+.secret-in
+
+.function-block__details {
+    font-size: 1.25em;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.effect-list {
+    width: 150px;
+    flex-direction: column;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.he-man {
+    display: inline-block;
+    vertical-align: middle;
+    width: 360px;
+    height: 270px;
+    margin-left: 30px;
+}
+
+.effect-list > input[type=button] {
+    width: 150px;
+    height: 45px;
+    margin: 3px 0;
+}
+
+._append {
+    color: #aa0000;
+}
+
+._before {
+    color: #00aa00;
+}
+
+._after {
+    color: #0000aa;
+}
+
+._bold {
+    font-weight: bold;
+}
+
+._label {
+    margin-left: 5px;
+    margin-bottom: 4px;
+}
+
+._label+input[type=radio] {
+    margin-left: 10px;
+}
+
+._unmargin {
+    margin: 0;
+}

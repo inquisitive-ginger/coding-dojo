@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Functions</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src="./js/functions.js" charset="utf-8"></script>
+</head>
+<body>
+    <div class="function-corral">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="function-block panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">.click()</h3>
+                        </div>
+                        <div class="function-block__insides">
+                            <p class="function-block__details">Click the button for some positive affirmation.</p>
+                            <input type="button" value="Do it!" class="_click function-block__btn btn btn-warning">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="function-block panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">.focus() | .focusOut() | .html()</h3>
+                        </div>
+                        <div class="function-block__insides">
+                            <p class="function-block__details">Click in the text box...please and thank you.</p>
+                            <div class="wrapper">
+                                <input type="text" placeholder="Hey. Over here..." class="_focus">
+                                <span>The text box is <span class="_focus-target _bold">unfocused</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div id="add-class" class="function-block panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">.addClass() | .removeClass() | .val()</h3>
+                        </div>
+                        <div class="function-block__insides">
+                            <p class="function-block__details">Choose the class for this panel.</p>
+                            <div class="wrapper">
+                                <input type="radio" value="panel-primary" name="panel_class" class="_add-class _unmargin" id="r1" checked><label for="r1" class="_label">panel-primary</label>
+                                <input type="radio" value="panel-warning" name="panel_class" class="_add-class _unmargin" id="r2"><label for="r2" class="_label">panel-warning</label>
+                                <input type="radio" value="panel-danger"  name="panel_class" class="_add-class _unmargin" id="r3"><label for="r3" class="_label">panel-danger</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="function-block--large panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">All the cool stuff...</h3>
+                        </div>
+                        <div class="function-block__insides">
+                            <p class="function-block__details">You have the power!!!!</p>
+                            <div class="effect-list">
+                                <input type="button" name="show" value=".show()" class="_show btn btn-warning">
+                                <input type="button" name="hide" value=".hide()" class="_hide btn btn-warning">
+                                <input type="button" name="toggle" value=".toggle()" class="_toggle btn btn-warning">
+                                <input type="button" name="fadeIn" value=".fadeIn()" class="_fadeIn btn btn-warning">
+                                <input type="button" name="fadeOut" value=".fadeOut()" class="_fadeOut btn btn-warning">
+                                <input type="button" name="slideDown" value=".slideDown()" class="_slideDown btn btn-warning">
+                                <input type="button" name="slideUp" value=".slideUp()" class="_slideUp btn btn-warning">
+                                <input type="button" name="slideToggle" value=".slideToggle()" class="_slideToggle btn btn-warning">
+                            </div>
+                            <a href="http://giphy.com/gifs/happy-excited-M7gtacN7aPNsc"><img src="./img/he-man.gif" alt="I have the power!!" class="he-man"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="function-block--large panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">.attr() | .text() | .data()</h3>
+                        </div>
+                        <div class="function-block__insides">
+                            <p class="function-block__details">Hover over the buttons for some secret info...</p>
+                            <input type="button" name="li1" value="Button 1" class="btn btn-primary _btn-hover" >
+                            <input type="button" name="li2" value="Button 2" class="btn btn-info _btn-hover" >
+                            <input type="button" name="li3" value="Button 3" class="btn btn-success _btn-hover" >
+                            <input type="button" name="li4" value="Button 4" class="btn btn-warning _btn-hover" >
+                            <input type="button" name="li5" value="Button 5" class="btn btn-danger _btn-hover" >
+                            <div class="secret-info"></div>
+                            <hr>
+                            <ul>
+                                <li id="li1">Rick</li>
+                                <li id="li2">Morty</li>
+                                <li id="li3">Summer</li>
+                                <li id="li4">Beth</li>
+                                <li id="li5">Jerry</li>
+                            </ul>
+                            <h3>The corresponding list item text is....</h3>
+                            <h2 class="text-info"></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="function-block--large panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">.append() | .before() | .after()</h3>
+                        </div>
+                        <div class="function-block__insides">
+                            <p class="function-block__details">Choose where to insert, type some text, click a button.</p>
+                            <div class="radio-wrapper">
+                                <input type="radio" value="append" name="panel_class" class="_unmargin" id="rAppend" checked><label for="rAppend" class="_label">Append</label>
+                                <input type="radio" value="before" name="panel_class" class="_unmargin" id="rBefore"><label for="rBefore" class="_label">Before</label>
+                                <input type="radio" value="after"  name="panel_class" class="_unmargin" id="rAfter"><label for="rAfter" class="_label">After</label>
+                            </div>
+                            <input type="text" id="txt-append" value="">
+                            <input type="button" name="place" value="Place Stuff" class="_btn-place btn btn-info" >
+                            <div class="_target-div">
+                                <h2 class="_target-element">This is the target element.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
