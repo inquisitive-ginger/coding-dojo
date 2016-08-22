@@ -1,0 +1,12 @@
+.contact-card {
+    background-color: #eeeeee;
+    border: 1px solid #337ab7;
+    border-radius: 5px;
+    padding: 0 15px 20px 15px;
+    margin-bottom: 5px;
+    text-align: middle;
+}
+
+.contact-card__description {
+    padding-top: 20px;
+}

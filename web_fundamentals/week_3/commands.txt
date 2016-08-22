@@ -1,0 +1,10 @@
+1. cd C:\Users\Zach\Desktop
+2. mkdir test
+3. cd test
+4. mv index.html index_2.html
+5. cd ..
+6. mkdir destination
+7. mv ./test/index_2.html ./destination
+8. rm ./test/style.css
+9. ls
+10. rm -rf ./destination
