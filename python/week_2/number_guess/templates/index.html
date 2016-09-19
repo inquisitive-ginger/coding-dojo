@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guessing Game</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Fantastic Guessing Game</h1>
+            <p>I'm thinking of a number between 1 and 100</p>
+        </div>
+        <div class="game-board">
+            <form action="/" class="form form-horizontal" method="post">
+                <div class="form-group">
+                    <label for="guess">Enter a number:</label>
+                    <input type=number name="guess" class="form-control" min="1" max="100">
+                </div>
+                <input type="submit" value="Submit" class="btn-primary btn">
+                <div class="result-banner {{ classes['result-display'] }} {{ classes['result-state'] }}">
+                    <p>{{ result }}</p>
+                </div>
+            </form>
+            <form action="/reset" class="form form-horizontal {{ classes['pa-display'] }}" >
+                <input type="submit" value="Play Again" class="btn-success btn">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.game-board {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.destination {
+    border: 2px gray solid;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: middle;
+}
+
+.activities {
+    border: 2px gray solid;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.pl-0 {
+    padding-left: 0 !important;
+}
+
+.pr-0 {
+    padding-right: 0 !important;
+}
+
+.positive {
+    color: #2ecc71;
+}
+
+.negative {
+    color: #c0392b;
+}

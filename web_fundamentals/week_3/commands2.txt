@@ -1,0 +1,75 @@
+C:\Users\Zach
+λ bash
+
+Zach@ZAP MINGW32 ~
+$ cd Desktop/
+
+Zach@ZAP MINGW32 ~/Desktop
+$ mkdir test
+
+Zach@ZAP MINGW32 ~/Desktop
+$ cd test/
+
+Zach@ZAP MINGW32 ~/Desktop/test
+$ touch index.html
+
+Zach@ZAP MINGW32 ~/Desktop/test
+$ touch styles.css
+
+Zach@ZAP MINGW32 ~/Desktop/test
+$ git init
+Initialized empty Git repository in C:/Users/Zach/Desktop/test/.git/
+
+Zach@ZAP MINGW32 ~/Desktop/test (master)
+$ git add .
+
+Zach@ZAP MINGW32 ~/Desktop/test (master)
+$ git commit -m "initial commit"
+[master (root-commit) d2512cc] initial commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+ create mode 100644 styles.css
+
+Zach@ZAP MINGW32 ~/Desktop/test (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Zach@ZAP MINGW32 ~/Desktop/test (master)
+$ git add .
+
+Zach@ZAP MINGW32 ~/Desktop/test (master)
+$ git commit -m "Update html"
+[master 2527841] Update html
+ 1 file changed, 12 insertions(+)
+
+Zach@ZAP MINGW32 ~/Desktop/test (master)
+$ git log
+commit 2527841899560c42d15809ad48643f85c9114f54
+Author: zpritchett <pritchett.za@gmail.com>
+Date:   Mon Aug 22 11:49:58 2016 -0700
+
+    Update html
+
+commit d2512cc19a059799d198db92b5dacf020e05317b
+Author: zpritchett <pritchett.za@gmail.com>
+Date:   Mon Aug 22 11:48:56 2016 -0700
+
+    initial commit
+
+Zach@ZAP MINGW32 ~/Desktop/test (master)
+$ git reset --soft HEAD~1
+
+Zach@ZAP MINGW32 ~/Desktop/test (master)
+$ git log
+commit d2512cc19a059799d198db92b5dacf020e05317b
+Author: zpritchett <pritchett.za@gmail.com>
+Date:   Mon Aug 22 11:48:56 2016 -0700
+
+    initial commit

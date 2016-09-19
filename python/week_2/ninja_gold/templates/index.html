@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Ninja Gold</h1>
+            <p>Visit different places to build your fortune.</p>
+        </div>
+        <h2>Your Fortune: <span class="{{ ('negative', 'positive')[session['gold'] > 0] }}">{{ session['gold'] }}</span></h2>
+        <div class="container-fluid game-board">
+            <div class="row">
+                <div class=" col-sm-12 col-md-6 col-lg-3 pl-0">
+                    <div class="destination farm">
+                        <h3>Farm</h3>
+                        <p>earn 10-20 gold</p>
+                        <form action="/process" method="post" class="form">
+                            <input type="hidden" name="destination" value="farm">
+                            <input type="submit" class="btn btn-primary" value="Find Gold!">
+                        </form>
+                    </div>
+                </div>
+                <div class=" col-sm-12 col-md-6 col-lg-3">
+                    <div class="destination casino">
+                        <h3>Casino</h3>
+                        <p>earn/lose 0-50 gold</p>
+                        <form action="/process" method="post" class="form">
+                            <input type="hidden" name="destination" value="casino">
+                            <input type="submit" class="btn btn-primary" value="Find Gold!">
+                        </form>
+                    </div>
+                </div>
+                <div class=" col-sm-12 col-md-6 col-lg-3">
+                    <div class="destination cave">
+                        <h3>Cave</h3>
+                        <p>earn 5-10 gold</p>
+                        <form action="/process" method="post" class="form">
+                            <input type="hidden" name="destination" value="cave">
+                            <input type="submit" class="btn btn-primary" value="Find Gold!">
+                        </form>
+                    </div>
+                </div>
+                <div class=" col-sm-12 col-md-6 col-lg-3 pr-0">
+                    <div class="destination house">
+                        <h3>House</h3>
+                        <p>earns 2-5 gold</p>
+                        <form action="/process" method="post" class="form">
+                            <input type="hidden" name="destination" value="house">
+                            <input type="submit" class="btn btn-primary" value="Find Gold!">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Activities</h2>
+        <div class="activities pre-scrollable">
+            {% for activity in session['activities'] %}
+                <p class="{{ ('positive', 'negative')['lost' in activity] }}">{{ activity }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

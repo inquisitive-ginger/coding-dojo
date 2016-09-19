@@ -1,0 +1,24 @@
+.result-banner > p {
+    margin-bottom: 0;
+}
+
+.hidden {
+    display: none
+}
+
+.visible {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.too-high {
+    color: red;
+}
+
+.too-low {
+    color: blue;
+}
+
+.correct {
+    color: green;
+}
