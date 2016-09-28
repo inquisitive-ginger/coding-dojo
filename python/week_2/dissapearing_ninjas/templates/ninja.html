@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Dissapearing Ninja</h1>
+            <p>Enter a url like '/ninja/blue' to display the corresponding ninja.</p>
+        </div>
+        <div class="container-fluid row">
+            {% for ninja in ninjas %}
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <img src="{{ url_for('static', filename='img/'+ ninja + '.jpg') }}" class="img-fluid" alt="">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend CRUD</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>CRUD Operations with Friends</h1>
+            <p>App showing the various CRUD operations</p>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Existing Friends</h4>
+                    </div>
+                    {% if friends|length > 0 %}
+                    <table class="table table-striped">
+                        <thead>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>E-mail</th>
+                            <th>Created</th>
+                            <th>Updated</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            {% for friend in friends %}
+                            <tr>
+                                <td>{{ friend.first_name }}</td>
+                                <td>{{ friend.last_name }}</td>
+                                <td>{{ friend.email }}</td>
+                                <td>{{ friend.created_at }}</td>
+                                <td>{{ friend.updated_at }}</td>
+                                <td>
+                                    <form action="/friends/{{friend.id}}/edit" class="inline">
+                                        <button type="submit" value="Edit" class="btn-link">Edit</button>
+                                    </form>
+                                    <form action="/friends/{{friend.id}}/delete" method="post" class="inline">
+                                        <button type="submit" value="Delete" class="btn-link">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <div class="card-block">
+                        <p>Dang. Doesn't look like you have any friends. You can add some using the form below.</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>New Friend</h4>
+                    </div>
+                    <div class="card-block">
+                        <form action="/friends" method="post">
+                            {{ form.csrf_token }}
+                            <div class="form-group {% if form.first_name.errors %} has-danger {% endif %}">
+                                {{ form.first_name.label }}
+                                {{ form.first_name(class="form-control {% if form.first_name.errors %} form-control-danger {% endif %}") }}
+                                {% if form.first_name.errors %}
+                                {% for error in form.first_name.errors %}
+                                    <div class="form-control-feedback">{{ error }}</div>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div class="form-group {% if form.last_name.errors %} has-danger {% endif %}">
+                                {{ form.last_name.label }}
+                                {{ form.last_name(class="form-control {% if form.last_name.errors %} form-control-danger {% endif %}") }}
+                                {% if form.last_name.errors %}
+                                {% for error in form.last_name.errors %}
+                                    <div class="form-control-feedback">{{ error }}</div>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div class="form-group {% if form.email.errors %} has-danger {% endif %}">
+                                {{ form.email.label }}
+                                {{ form.email(class="form-control {% if form.email.errors %} form-control-danger {% endif %}") }}
+                                {% if form.email.errors %}
+                                {% for error in form.email.errors %}
+                                    <div class="form-control-feedback">{{ error }}</div>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                            <button type="submit" value="add" class="btn btn-primary">Add User</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

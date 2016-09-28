@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h3 class="text-center p10">Register</h3>
+        <hr>
+        <form action="/validate" method="post" role="form">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group {% if form_errors and 'f_name' in form_errors and not form_errors['f_name']['valid'] %} has-danger {% endif %}">
+                        <input type="text" class="form-control" name="first_name" placeholder="First Name" value="{{ request.form['first_name'] }}">
+                        {% if form_errors and 'f_name' in form_errors and form_errors['f_name']['message']%}
+                        <div class="form-control-feedback">{{ form_errors['f_name']['message'] }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group {% if form_errors and  'l_name' in form_errors and not form_errors['l_name']['valid'] %} has-danger {% endif %}">
+                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="{{ request.form['last_name'] }}">
+                        {% if form_errors and 'l_name' in form_errors and form_errors['l_name']['message']%}
+                        <div class="form-control-feedback">{{ form_errors['l_name']['message'] }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group {% if form_errors and  'email' in form_errors and not form_errors['email']['valid'] %} has-danger {% endif %}">
+                <input type="text" class="form-control" name="email" placeholder="E-mail Address" value="{{ request.form['email'] }}">
+                {% if form_errors and 'email' in form_errors and form_errors['email']['message']%}
+                <div class="form-control-feedback">{{ form_errors['email']['message'] }}</div>
+                {% endif %}
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group {% if form_errors and  'pass' in form_errors and not form_errors['pass']['valid'] %} has-danger {% endif %}">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        {% if form_errors and 'pass' in form_errors and form_errors['pass']['message']%}
+                        <div class="form-control-feedback">{{ form_errors['pass']['message'] }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group {% if form_errors and 'c_pass' in form_errors and not form_errors['c_pass']['valid'] %} has-danger {% endif %}">
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password">
+                        {% if form_errors and 'c_pass' in form_errors and form_errors['c_pass']['message']%}
+                        <div class="form-control-feedback">{{ form_errors['c_pass']['message'] }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="form-control btn btn-primary" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

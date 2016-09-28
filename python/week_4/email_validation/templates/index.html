@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-mail Validator</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+
+    <style>
+        .delete {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>E-mail Validator</h1>
+            <p>Enter an e-mail below and add it to the database.</p>
+        </div>
+
+        <form action="/" method="post" class="form-horizontal">
+            {{ form.csrf_token }}
+            <div class="form-group {% if form.email.errors %} has-danger {% endif %}">
+                {{ form.email(class="form-control", placeholder="E-mail address") }}
+                {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                    <div class="form-control-feedback">{{ error }}</div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add E-mail" class="btn btn-primary">
+            </div>
+        </form>
+
+        {% if emails %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>E-mail Address</th>
+                    <th>Created</th>
+                    <th></th>
+                </tr>
+            </thead>
+            {% for email in emails %}
+            <tr>
+                <td>{{ email.email }}</td>
+                <td>{{ email.created_at }}</td>
+                <td><a href="/delete/{{email.id}}" class="delete">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
+
+    </div>
+</body>
+</html>

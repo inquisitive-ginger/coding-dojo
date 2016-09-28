@@ -1,0 +1,17 @@
+.pd-0 {
+    padding: 0;
+}
+
+.error {
+    display: inline-block;
+    color: red;
+    border: 1px red dashed;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}

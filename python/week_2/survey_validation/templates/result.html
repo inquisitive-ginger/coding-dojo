@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic Validation</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Survey Results</h2>
+        <table class="table table-striped">
+            <tr>
+                <td class="first-column">Name</td>
+                <td>{{session['name']}}</td>
+            </tr>
+            <tr>
+                <td class="first-column">Location</td>
+                <td>{{session['loc']}}</td>
+            </tr>
+            <tr>
+                <td class="first-column">Favorite Language</td>
+                <td>{{session['lang']}}</td>
+            </tr>
+            <tr>
+                <td class="first-column">Comments</td>
+                <td>{{session['comment']}}</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>
